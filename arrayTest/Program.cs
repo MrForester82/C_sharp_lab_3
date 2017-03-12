@@ -61,7 +61,15 @@ namespace arrayTest
             }
             Arrs.createArr3(arrr);
             Arrs.printArr3("arrr", arrr);
+
             //массивы массивов//////////////////////////////////////////////////
+            Console.WriteLine();
+            Arrs.printAnyArray("A", A);
+            Console.WriteLine();
+            Arrs.printAnyArray("matr1", matr1);
+            Console.WriteLine();
+            Arrs.printAnyArray("arrr", arrr);
+
 
         }
     }    

@@ -38,6 +38,16 @@ namespace arrayTest
             int[] D = new int[size];
             Arrs.createOneDimAr(D);
             Arrs.printArr1("D", D);
+
+            int[,] matr1 = new int[3, 3];
+            int[,] matr2 = new int[3, 3];
+
+            Arrs.createMatrix(matr1);
+            Arrs.printMatrix("matr1", matr1);
+            Arrs.createMatrix(matr2);
+            Arrs.printMatrix("matr2", matr2);
+
+            Arrs.printMatrix("matr1 * matr2", Arrs.multipleMatrix(matr1, matr2));
         }
     }    
 }

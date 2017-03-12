@@ -6,6 +6,7 @@ namespace arrayTest
     {
         static void Main(string[] args)
         {
+            //одномерные массивы//////////////////////////////////////////////////
             int[] A = new int[5];
             int[] B = new int[5];
             int[] C = new int[5];
@@ -38,7 +39,9 @@ namespace arrayTest
             int[] D = new int[size];
             Arrs.createOneDimAr(D);
             Arrs.printArr1("D", D);
+            //одномерные массивы//////////////////////////////////////////////////
 
+            //матрицы//////////////////////////////////////////////////
             int[,] matr1 = new int[3, 3];
             int[,] matr2 = new int[3, 3];
 
@@ -48,6 +51,18 @@ namespace arrayTest
             Arrs.printMatrix("matr2", matr2);
 
             Arrs.printMatrix("matr1 * matr2", Arrs.multipleMatrix(matr1, matr2));
+            //матрицы//////////////////////////////////////////////////
+
+            //массивы массивов//////////////////////////////////////////////////
+            int[][] arrr = new int[10][];
+            for(int i = 0;  i < arrr.Length; i++)
+            {
+                arrr[i] = new int[i + 1];
+            }
+            Arrs.createArr3(arrr);
+            Arrs.printArr3("arrr", arrr);
+            //массивы массивов//////////////////////////////////////////////////
+
         }
     }    
 }

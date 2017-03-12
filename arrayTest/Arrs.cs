@@ -25,6 +25,17 @@ namespace arrayTest
             }
         }
 
+        public static void createArr3(int[][] array)
+        {
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array[i].Length; j++)
+                {
+                    array[i][j] = md.Next(1, 20);
+                }
+            }
+        }
+
         public static void printArr1(string name, int[] mas)
         {
             int count = 0;
@@ -45,6 +56,19 @@ namespace arrayTest
                 for (int j = 0; j < matr.GetLength(1); j++)
                 {
                     Console.Write("{0}\t", matr[i,j]);
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public static void printArr3(string name,  int[][] array)
+        {
+            Console.WriteLine("{0}:\t", name);
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array[i].Length; j++)
+                {
+                    Console.Write("{0}\t", array[i][j]);
                 }
                 Console.WriteLine();
             }

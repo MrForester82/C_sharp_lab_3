@@ -114,7 +114,7 @@ namespace arrayTest
                 return result;
             }
         }
-        //lab 3//////////////////////////////////////////////////////
+        //lab 4//////////////////////////////////////////////////////
         public static void printAnyArray(string name, Array arr)
         {
             if(arr.Rank == 1)
@@ -123,6 +123,7 @@ namespace arrayTest
                 try
                 {
                     Array val;
+                    //задание 2 из ЛР № 4
                     foreach (var value in arr)
                     {
                         val = (Array)value;
@@ -158,6 +159,53 @@ namespace arrayTest
                 Console.WriteLine("Такая размерность массивов не поддерживается.");
             }
         }
+
+        public static void printAnyArrayObj(string name, object argument)
+        {
+            Array arr = (Array)argument;
+            if (arr.Rank == 1)
+            {
+                Console.WriteLine("{0}:\t", name);
+                try
+                {
+                    Array val;
+                    //задание 2 из ЛР № 4
+                    foreach (var value in arr)
+                    {
+                        val = (Array)value;
+                        for (int i = 0; i < val.Length; i++)
+                        {
+                            Console.Write("{0}\t", val.GetValue(i));
+                        }
+                        Console.WriteLine();
+                    }
+                }
+                catch
+                {
+                    foreach (var value in arr)
+                    {
+                        Console.Write("{0}\t", value);
+                    }
+                }
+            }
+            else if (arr.Rank == 2)
+            {
+                Console.WriteLine("{0}:\t", name);
+                for (int i = 0; i < arr.GetLength(0); i++)
+                {
+                    for (int j = 0; j < arr.Length / arr.GetLength(0); j++)
+                    {
+                        Console.Write("{0}\t", arr.GetValue(i, j));
+                    }
+                    Console.WriteLine();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Такая размерность массивов не поддерживается.");
+            }
+        }
+
 
     }
 }

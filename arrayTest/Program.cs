@@ -61,8 +61,12 @@ namespace arrayTest
             }
             Arrs.createArr3(arrr);
             Arrs.printArr3("arrr", arrr);
-
             //массивы массивов//////////////////////////////////////////////////
+
+            /*
+             * LAB 4444444444444444444444444444444444444444444
+            */
+
             Console.WriteLine();
             Arrs.printAnyArray("A", A);
             Console.WriteLine();
@@ -70,6 +74,41 @@ namespace arrayTest
             Console.WriteLine();
             Arrs.printAnyArray("arrr", arrr);
 
+            //задание 2
+            Array ACopy = Array.CreateInstance(typeof(string), 6);
+            Array Aexample = Array.CreateInstance(typeof(string), 3);
+            Aexample.SetValue("zero", 0);
+            Aexample.SetValue("four", 1);
+            Aexample.SetValue("five", 2);
+            Aexample.CopyTo(ACopy, 2);
+            Console.WriteLine();
+            Arrs.printAnyArray("ACopy", ACopy);
+            string str1 = ACopy.GetValue(2).ToString();
+            Console.WriteLine("\n'r' at position {0}",str1.IndexOf('r'));
+            string str2 = "initialise";
+            Console.WriteLine("the last posotion if'i' is {0}", str2.LastIndexOf('i'));
+            Console.WriteLine();
+            Arrs.printAnyArray("A", A);
+            Console.WriteLine();
+            Array.Reverse(A);
+            Arrs.printAnyArray("reverse A", A);
+            Console.WriteLine();
+            Array.Sort(A);
+            Arrs.printAnyArrayObj("sorted A", A);
+
+
+            //Students
+            Student[] st = new Student[3];
+            Student.InitAr(st);
+            st[0].SetValue("Орджоникидзе");
+            st[1].SetValue("Лепсеридзе");
+            st[2].SetValue("Газгаридзе");
+            Console.WriteLine("\n");
+            for (int i = 0; i < st.GetLength(0); i++)
+            {
+                Console.WriteLine(st[i].ToString());
+            }
+            Console.WriteLine();
 
         }
     }    
